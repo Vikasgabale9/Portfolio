@@ -195,6 +195,22 @@
       padding:0.25em 0.7em; border-radius:20px; font-size:0.78rem;
       border:1px solid rgba(96,165,250,0.3); font-weight:600;
     }
+    .project-card-featured {
+      background:linear-gradient(135deg,rgba(96,165,250,0.1),rgba(192,132,252,0.08));
+      border-radius:18px; padding:2.2rem; grid-column:1/-1;
+      box-shadow:0 8px 35px rgba(0,0,0,0.45); border-left:5px solid var(--accent-cyan);
+      transition:all 0.4s ease; position:relative; overflow:hidden;
+    }
+    .project-card-featured:hover { transform:translateY(-4px); box-shadow:0 15px 45px rgba(96,165,250,0.35); }
+    .featured-badge {
+      display:inline-block; background:linear-gradient(135deg,var(--accent-cyan),var(--accent-blue));
+      color:var(--bg-main); font-weight:800; font-size:0.72rem; letter-spacing:1px; text-transform:uppercase;
+      padding:0.3rem 0.9rem; border-radius:20px; margin-bottom:0.8rem;
+    }
+    .project-card-featured h4 { font-size:1.55rem; margin:0 0 0.4rem; color:var(--accent-cyan); }
+    .role-tags { display:flex; gap:8px; flex-wrap:wrap; margin:0.6rem 0 1rem; }
+    .role-tag { background:rgba(192,132,252,0.15); color:var(--accent-purple); border:1px solid rgba(192,132,252,0.35); padding:0.25em 0.8em; border-radius:16px; font-size:0.78rem; font-weight:700; }
+    .status-note { background:rgba(251,146,60,0.12); border:1px dashed rgba(251,146,60,0.4); color:var(--accent-orange); font-size:0.85rem; padding:0.6rem 1rem; border-radius:10px; margin-top:1rem; }
     .project-links { margin-top:1.2rem; position:relative; z-index:10; }
     .project-links a {
       display:inline-block; margin-right:10px; margin-top:8px; font-size:0.88rem; color:white;
@@ -302,6 +318,30 @@
       color:#fff; box-shadow:0 4px 18px rgba(244,114,182,0.45);
     }
     .resume-btn:hover { transform:translateY(-3px) scale(1.06); box-shadow:0 8px 28px rgba(244,114,182,0.65); }
+
+    /* HERO ACTION BUTTONS */
+    .hero-actions { display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; margin-bottom:1.5rem; }
+    .hero-btn {
+      display:inline-flex; align-items:center; gap:0.4rem;
+      text-decoration:none; padding:0.7rem 1.6rem; border-radius:25px;
+      font-weight:600; font-size:0.92rem; transition:all 0.35s ease; cursor:pointer;
+    }
+    .hero-btn-primary {
+      background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));
+      color:#fff; box-shadow:0 4px 15px rgba(96,165,250,0.35); border:1px solid transparent;
+    }
+    .hero-btn-primary:hover { transform:translateY(-3px) scale(1.06); box-shadow:0 8px 25px rgba(96,165,250,0.55); }
+    .hero-btn-secondary {
+      background:rgba(255,255,255,0.06);
+      color:var(--text-main);
+      border:1.5px solid var(--accent-cyan);
+      box-shadow:0 2px 10px rgba(34,211,238,0.15);
+    }
+    .hero-btn-secondary:hover {
+      transform:translateY(-3px) scale(1.06);
+      background:rgba(255,255,255,0.14); border-color:var(--accent-cyan);
+      box-shadow:0 8px 25px rgba(34,211,238,0.35); color:var(--accent-cyan);
+    }
   </style>
 </head>
 <body>
@@ -313,18 +353,21 @@
     <h1>Vikas Vitthalrao Gabale</h1>
     <h2>&#128187; Java Backend Developer</h2>
     <p class="hero-desc">
-      Building scalable RESTful APIs using Spring Boot, Hibernate, and MySQL.<br>
-      Focused on clean architecture, efficient data handling, and solving real-world backend problems through structured design and optimized logic.
+      Java Backend Developer focused on building backend applications using Java, Spring Boot, Spring Data JPA, Hibernate, MySQL, and Redis.<br>
+      Interested in REST API development, database integration, authentication workflows, validation, exception handling, and practical backend problem-solving.
     </p>
+    <div class="hero-actions">
+      <a href="#projects" class="hero-btn hero-btn-primary">View Projects</a>
+      <a href="Vikas_Gabale_Java_Backend_Developer_Resume.pdf" download class="hero-btn hero-btn-secondary">Download Resume</a>
+      <a href="https://github.com/Vikasgabale9" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-secondary">GitHub</a>
+      <a href="https://www.linkedin.com/in/vikas-gabale" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-secondary">LinkedIn</a>
+    </div>
     <nav>
       <a href="#about">About</a>
-      <a href="#what-i-do">What I Do</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
-      <a href="#achievements">Achievements</a>
       <a href="#education">Education</a>
-      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -335,27 +378,23 @@
     <section class="card" id="about">
       <h3 class="section-title">&#128075; About Me</h3>
       <p>
-        Java Backend Developer with hands-on experience in designing and building backend applications using Java, Spring Boot, Hibernate, REST APIs, and SQL.<br><br>
-        I focus on writing clean, maintainable code and building scalable backend systems using layered architecture and efficient database design.<br><br>
-        Strong foundation in OOP, Java Collections, multithreading, and problem-solving. Actively practicing <span style="color:var(--accent-cyan);font-weight:600;">Data Structures and Algorithms</span> on LeetCode and HackerRank while building real-world backend projects.
+        I'm a Java Backend Developer focused on building backend applications using Java, Spring Boot, REST APIs, and database integration. My core work centers around Spring Data JPA, Hibernate, MySQL, backend application architecture, authentication and authorization concepts, and caching using Redis.<br><br>
+        I write clean, maintainable code using layered architecture (Controller &rarr; Service &rarr; Repository) and pay close attention to validation and exception handling so APIs behave predictably.<br><br>
+        Strong foundation in OOP, Java Collections, multithreading basics, and Java Streams. Actively practicing <span style="color:var(--accent-cyan);font-weight:600;">Data Structures and Algorithms</span> on LeetCode and HackerRank while building real-world backend projects.<br><br>
+        I continuously work on expanding my backend knowledge and am currently exploring <span style="color:var(--accent-orange);font-weight:600;">AWS, Apache Kafka, and React</span>.
       </p>
-    </section>
-
-    <!-- WHAT I DO -->
-    <section class="card" id="what-i-do">
-      <h3 class="section-title">&#9881;&#65039; What I Do</h3>
-      <div class="what-i-do-grid">
+      <div class="what-i-do-grid" style="margin-top:1.5rem;">
         <div class="what-i-do-item">
           <span class="icon">&#128279;</span>
           <div><strong>REST API Development</strong><p>Build robust, documented APIs using Spring Boot with proper validation and exception handling.</p></div>
         </div>
         <div class="what-i-do-item">
           <span class="icon">&#127959;&#65039;</span>
-          <div><strong>Scalable Backend Architecture</strong><p>Design layered MVC systems (Controller &#8594; Service &#8594; Repository) for maintainability and growth.</p></div>
+          <div><strong>Backend Application Architecture</strong><p>Structure applications using layered MVC design (Controller &#8594; Service &#8594; Repository) for maintainable code.</p></div>
         </div>
         <div class="what-i-do-item">
           <span class="icon">&#9889;</span>
-          <div><strong>Performance Optimization</strong><p>Optimize data retrieval using efficient data structures (HashMap, sorting) and structured SQL queries.</p></div>
+          <div><strong>Caching with Redis</strong><p>Explore caching strategies using Spring Cache and RedisTemplate to reduce repeated database queries.</p></div>
         </div>
         <div class="what-i-do-item">
           <span class="icon">&#128452;&#65039;</span>
@@ -369,69 +408,85 @@
       <h3 class="section-title">&#128295;&#65039; Tech Skills</h3>
       <div class="skills-section">
         <div class="skills-category">
-          <h4>Programming &amp; Backend</h4>
+          <h4>Backend Development</h4>
           <div class="skills-list">
-            <div class="skill-badge">Java (OOP, Streams, Multithreading)</div>
+            <div class="skill-badge">Java</div>
             <div class="skill-badge">Spring Boot</div>
+            <div class="skill-badge">Spring MVC</div>
+            <div class="skill-badge">Spring Data JPA</div>
             <div class="skill-badge">Hibernate</div>
             <div class="skill-badge">REST APIs</div>
-            <div class="skill-badge">JDBC</div>
           </div>
         </div>
         <div class="skills-category">
-          <h4>Database</h4>
+          <h4>Database &amp; Caching</h4>
           <div class="skills-list">
-            <div class="skill-badge">Oracle SQL</div>
             <div class="skill-badge">MySQL</div>
+            <div class="skill-badge">PostgreSQL</div>
+            <div class="skill-badge">Redis</div>
+            <div class="skill-badge">Oracle SQL</div>
           </div>
         </div>
         <div class="skills-category">
-          <h4>Frontend Basics</h4>
+          <h4>Security &amp; Testing</h4>
+          <div class="skills-list">
+            <div class="skill-badge">Spring Security</div>
+            <div class="skill-badge">JWT</div>
+            <div class="skill-badge">Authentication &amp; Authorization</div>
+            <div class="skill-badge">BCrypt Password Encryption</div>
+            <div class="skill-badge">Bean Validation</div>
+            <div class="skill-badge">JUnit</div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h4>Tools &amp; Documentation</h4>
+          <div class="skills-list">
+            <div class="skill-badge">Git &amp; GitHub</div>
+            <div class="skill-badge">Maven</div>
+            <div class="skill-badge">Postman</div>
+            <div class="skill-badge">Swagger / OpenAPI</div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h4>Frontend</h4>
           <div class="skills-list">
             <div class="skill-badge">HTML5</div>
             <div class="skill-badge">CSS3</div>
             <div class="skill-badge">JavaScript</div>
             <div class="skill-badge">Thymeleaf</div>
-            <div class="skill-badge">Bootstrap</div>
           </div>
         </div>
         <div class="skills-category">
-          <h4>Tools &amp; Practices</h4>
+          <h4>Core Concepts</h4>
           <div class="skills-list">
-            <div class="skill-badge">Git &amp; GitHub</div>
-            <div class="skill-badge">Maven</div>
-            <div class="skill-badge">Gradle</div>
-            <div class="skill-badge">Spring Tool Suite (STS)</div>
-            <div class="skill-badge">Postman</div>
-            <div class="skill-badge">Swagger</div>
-            <div class="skill-badge">JUnit</div>
-            <div class="skill-badge">Agile Development</div>
-          </div>
-        </div>
-        <div class="skills-category">
-          <h4>Core CS Concepts</h4>
-          <div class="skills-list">
-            <div class="skill-badge">Data Structures &amp; Algorithms</div>
+            <div class="skill-badge">OOP</div>
             <div class="skill-badge">Collections Framework</div>
             <div class="skill-badge">Exception Handling</div>
-            <div class="skill-badge">System Design</div>
+            <div class="skill-badge">Multithreading Basics</div>
+            <div class="skill-badge">Java Streams</div>
+            <div class="skill-badge">Data Structures &amp; Algorithms</div>
+            <div class="skill-badge">Layered Architecture</div>
+            <div class="skill-badge">DTO-based Request/Response Handling</div>
+            <div class="skill-badge">SQL Joins</div>
+            <div class="skill-badge">Relational Database Concepts</div>
           </div>
         </div>
 
-        <!-- NEXT LEARNING -->
+        <!-- CURRENTLY LEARNING -->
         <div class="skills-category" style="margin-top:0.5rem;">
           <div class="learning-section-header">
-            <h4>&#128293; Currently Learning</h4>
+            <h4>&#128293; Currently Learning / Exploring</h4>
             <span class="learning-pill">&#9679; In Progress</span>
           </div>
           <div class="skills-list">
-            <div class="learning-badge">&#127381; Microservices Architecture</div>
+            <div class="learning-badge">&#9729;&#65039; AWS</div>
             <div class="learning-badge">&#128240; Apache Kafka</div>
-            <div class="learning-badge">&#9889; Redis</div>
-            <div class="learning-badge">&#128221; System Design</div>
+            <div class="learning-badge">&#9889; React</div>
+            <div class="learning-badge">&#127959;&#65039; Microservices Fundamentals</div>
+            <div class="learning-badge">&#128221; System Design Fundamentals</div>
           </div>
           <p style="color:var(--text-light);font-size:0.82rem;margin-top:0.8rem;font-style:italic;padding-left:0.2rem;">
-            &#128161; Actively expanding backend expertise into distributed systems and high-performance architecture.
+            &#128161; These are technologies I'm actively learning &mdash; not areas I claim professional experience in yet.
           </p>
         </div>
 
@@ -443,15 +498,63 @@
       <h3 class="section-title">&#128640; Projects</h3>
       <div class="projects-grid">
 
-        <div class="project-card">
-          <h4>&#128269; Smart Lost &amp; Found System</h4>
-          <p class="project-tagline">Designed and developed a RESTful backend system to manage lost and found items efficiently.</p>
+        <!-- FEATURED: HOURBOOK -->
+        <div class="project-card-featured">
+          <span class="featured-badge">&#11088; Featured Project</span>
+          <h4>&#127967;&#65039; HourBook &mdash; Sports Ground Booking Platform</h4>
+          <p class="project-tagline">An hourly sports ground management platform supporting Admin, Vendor, and User workflows.</p>
+          <div class="role-tags">
+            <span class="role-tag">Admin</span>
+            <span class="role-tag">Vendor</span>
+            <span class="role-tag">User</span>
+          </div>
           <p class="project-section-label">&#11088; Key Features</p>
           <ul class="project-bullets">
-            <li>Developed 10+ REST API endpoints for item management and claim tracking</li>
-            <li>Implemented search &amp; filtering using optimized data structures (HashMap, sorting)</li>
-            <li>Applied global exception handling and validation for reliable API responses</li>
-            <li>Integrated Swagger for API documentation</li>
+            <li>Multi-role architecture with Admin, Vendor, and User modules</li>
+            <li>Registration workflows with email OTP verification</li>
+            <li>Vendor KYC approval workflow with document handling</li>
+            <li>Ground management: add/edit/activate grounds, amenities, pricing, and multiple image uploads</li>
+            <li>Admin dashboard for managing users, vendors, and platform data</li>
+            <li>Search, filtering, and pagination for ground listings</li>
+          </ul>
+          <p class="project-section-label">&#129504; Key Backend Concepts</p>
+          <ul class="project-bullets">
+            <li>DTO-based layered architecture (Controller &#8594; Service &#8594; Repository)</li>
+            <li>Entity relationships and persistence using Spring Data JPA &amp; Hibernate</li>
+            <li>Validation and centralized exception handling</li>
+            <li>Implemented JWT token generation, validation, and role-based API protection as part of the application's authentication flow</li>
+          </ul>
+          <p class="project-section-label">&#128295; Tech Stack</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Java 21</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Spring Security</span>
+            <span class="tech-tag">JWT</span>
+            <span class="tech-tag">Spring Data JPA</span>
+            <span class="tech-tag">Hibernate</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Thymeleaf</span>
+            <span class="tech-tag">Maven</span>
+            <span class="tech-tag">Lombok</span>
+            <span class="tech-tag">Bean Validation</span>
+          </div>
+          <div class="status-note">&#128679; Currently extending the platform with booking and availability management.</div>
+          <div class="project-links">
+            <a href="https://github.com/Vikasgabale9/HourBook" target="_blank" rel="noopener noreferrer">&#128279; View Source Code</a>
+          </div>
+        </div>
+
+        <!-- SMART LOST & FOUND -->
+        <div class="project-card">
+          <h4>&#128269; Smart Lost &amp; Found Management System</h4>
+          <p class="project-tagline">A Spring Boot REST API for reporting, tracking, and managing lost and found items.</p>
+          <p class="project-section-label">&#11088; Key Features</p>
+          <ul class="project-bullets">
+            <li>REST API development for lost item reporting and found item management</li>
+            <li>CRUD operations with DTO-based API design</li>
+            <li>Search by location and sorting for latest items</li>
+            <li>Request validation and global exception handling</li>
+            <li>Swagger / OpenAPI documentation</li>
           </ul>
           <p class="project-section-label">&#128295; Tech Stack</p>
           <div class="tech-tags">
@@ -467,50 +570,52 @@
           </div>
         </div>
 
+        <!-- STUDENT MANAGEMENT SYSTEM WITH OTP SECURITY -->
         <div class="project-card">
-          <h4>&#129514; Online Quiz Application</h4>
-          <p class="project-tagline">Developed a full-stack quiz application with dynamic question flow and real-time score calculation.</p>
+          <h4>&#127891; Student Management System with OTP Security</h4>
+          <p class="project-tagline">A Spring Boot backend for student management with email OTP-based account verification.</p>
           <p class="project-section-label">&#11088; Key Features</p>
           <ul class="project-bullets">
-            <li>Implemented quiz logic with question display, answer validation, and score calculation</li>
-            <li>Designed layered MVC architecture (Controller &#8594; Service &#8594; Repository)</li>
-            <li>Used JPA/Hibernate for efficient database operations</li>
-            <li>Ensured input validation and smooth UX with Thymeleaf templates</li>
+            <li>Student registration with email OTP verification (JavaMailSender)</li>
+            <li>Login secured with Spring Security using HTTP Basic Authentication</li>
+            <li>Password encryption using BCrypt</li>
+            <li>OTP verification with expiry handling, cleaned up via a scheduled job</li>
+            <li>CRUD operations on student data with filtering by course and status</li>
           </ul>
           <p class="project-section-label">&#128295; Tech Stack</p>
           <div class="tech-tags">
             <span class="tech-tag">Java</span>
             <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">Hibernate</span>
+            <span class="tech-tag">Spring Security</span>
+            <span class="tech-tag">Spring Data JPA</span>
             <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Thymeleaf</span>
-            <span class="tech-tag">Bootstrap</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Vikasgabale9/QuizApp" target="_blank" rel="noopener noreferrer">&#128279; View Code on GitHub</a>
+            <a href="https://github.com/Vikasgabale9/Student-Management-System-with-OTP-Security" target="_blank" rel="noopener noreferrer">&#128279; View Code on GitHub</a>
           </div>
         </div>
 
+        <!-- REDIS CACHE WITH MYSQL -->
         <div class="project-card">
-          <h4>&#127760; Personal Portfolio Website</h4>
-          <p class="project-tagline">Designed a responsive, animated portfolio to showcase projects and technical skills.</p>
+          <h4>&#9889; Redis Cache with MySQL</h4>
+          <p class="project-tagline">A Spring Boot project exploring Redis caching alongside MySQL to reduce repeated database access.</p>
           <p class="project-section-label">&#11088; Key Features</p>
           <ul class="project-bullets">
-            <li>Built responsive UI with GSAP scroll animations and particle effects</li>
-            <li>Showcases backend projects with GitHub links and recruiter-focused descriptions</li>
-            <li>Integrated working contact form via Formspree</li>
-            <li>Optimized for readability, UX, and recruiter scanning</li>
+            <li>Integrated Redis with Spring Boot using Spring Cache abstraction and RedisTemplate</li>
+            <li>Applied <code>@Cacheable</code>, <code>@CachePut</code>, and <code>@CacheEvict</code> for cache management</li>
+            <li>MySQL remains the primary persistent data store</li>
+            <li>Explored caching strategies to reduce repeated database queries for frequently accessed data</li>
           </ul>
           <p class="project-section-label">&#128295; Tech Stack</p>
           <div class="tech-tags">
-            <span class="tech-tag">HTML5</span>
-            <span class="tech-tag">CSS3</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">GSAP</span>
-            <span class="tech-tag">GitHub Pages</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Spring Cache</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Vikasgabale9/Portfolio" target="_blank" rel="noopener noreferrer">&#128279; View Code on GitHub</a>
+            <p style="color:var(--text-light);font-size:0.85rem;font-style:italic;margin:0;">Source code repository not yet published &mdash; link will be added once available.</p>
           </div>
         </div>
 
@@ -524,24 +629,42 @@
       <div class="exp-card">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Backend Developer <span style="color:var(--text-light);font-weight:400;font-size:0.92rem;">— Project-Based Learning</span></div>
-            <div class="exp-company">Self-Initiated &middot; Hyderabad, India</div>
+            <div class="exp-title">Java Developer Intern</div>
+            <div class="exp-company">Analogue Software Solutions</div>
           </div>
-          <div class="exp-date">July 2025 &ndash; Present</div>
+          <div class="exp-date">Jun 2026 &ndash; Aug 2026</div>
         </div>
-        <p class="exp-desc">Worked on self-initiated backend projects using Java and Spring Boot, focusing on REST API development, database design, and scalable architecture.</p>
-        <div class="contrib-label">&#128293; Key Contributions</div>
         <ul class="exp-bullets">
-          <li>Developed and implemented <b>10+ RESTful API endpoints</b> using Java, Spring Boot, Hibernate, and MySQL</li>
-          <li>Designed applications using <b>layered architecture</b> (Controller&ndash;Service&ndash;Repository) for maintainability</li>
-          <li>Implemented input validation, <b>global exception handling</b>, and Swagger API documentation</li>
-          <li>Tested <b>20+ API endpoints</b> using Postman to ensure reliability and proper error handling</li>
-          <li>Applied <b>DSA concepts</b> (HashMap, sorting) to optimize search and filtering functionality</li>
-          <li>Worked with SQL queries, joins, and <b>schema design</b> for efficient data handling</li>
-          <li>Designed clean and maintainable APIs following <b>REST principles</b> and naming conventions</li>
-          <li>Improved API response efficiency by optimizing data structures and query logic</li>
-          <li>Reduced development time by creating <b>reusable service layer components</b></li>
+          <li>Contributed to backend development and technical tasks involving Java, Spring Boot, databases, and project-specific workflows</li>
+          <li>Worked with existing project modules to understand and extend backend logic</li>
+          <li>Assisted with API-related and database-related tasks as part of the team</li>
+          <li>Tested API functionality and error scenarios using Postman</li>
+          <li>Collaborated with team members on assigned project tasks</li>
         </ul>
+      </div>
+
+      <div class="exp-card" style="background:rgba(255,255,255,0.03);border-style:dashed;">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Java Developer Training <span style="color:var(--text-light);font-weight:400;font-size:0.85rem;">&mdash; Professional Training, Not Employment</span></div>
+            <div class="exp-company">Naresh IT</div>
+          </div>
+        </div>
+        <div class="contrib-label">&#128218; Areas Covered</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Core Java</span>
+          <span class="tech-tag">Advanced Java</span>
+          <span class="tech-tag">OOP</span>
+          <span class="tech-tag">Collections Framework</span>
+          <span class="tech-tag">JDBC</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">Spring MVC</span>
+          <span class="tech-tag">Hibernate / JPA</span>
+          <span class="tech-tag">REST APIs</span>
+          <span class="tech-tag">Spring Security Concepts</span>
+          <span class="tech-tag">Backend Project Development</span>
+        </div>
       </div>
 
       <div class="exp-card">
@@ -608,6 +731,24 @@
           <p>Actively solved 150+ Data Structures &amp; Algorithms problems on LeetCode and HackerRank, with competitive participation in hackathons on Unstop.</p>
         </div>
       </div>
+
+      <div class="achievement-highlight">
+        <span class="ach-icon">&#127381;</span>
+        <div>
+          <h4>TCS NQT &mdash; National Qualifier Test &middot; March 20, 2026</h4>
+          <p>Appeared for the TCS National Qualifier Test (NQT) on <b style="color:var(--text-main)">March 20, 2026</b> and achieved outstanding results:</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.7rem;">
+            <div style="background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.35);border-radius:12px;padding:0.6rem 1.1rem;text-align:center;min-width:120px;">
+              <div style="font-size:1.5rem;font-weight:800;color:var(--accent-cyan);line-height:1;">100<span style="font-size:0.9rem;font-weight:600;">/100</span></div>
+              <div style="font-size:0.78rem;color:var(--text-light);margin-top:0.2rem;">Programming</div>
+            </div>
+            <div style="background:rgba(192,132,252,0.12);border:1px solid rgba(192,132,252,0.35);border-radius:12px;padding:0.6rem 1.1rem;text-align:center;min-width:120px;">
+              <div style="font-size:1.5rem;font-weight:800;color:var(--accent-purple);line-height:1;">70<span style="font-size:0.9rem;font-weight:600;">/100</span></div>
+              <div style="font-size:0.78rem;color:var(--text-light);margin-top:0.2rem;">Overall Aptitude</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- EDUCATION -->
@@ -620,21 +761,6 @@
       </ul>
     </section>
 
-    <!-- STRENGTHS -->
-    <section class="card" id="strengths">
-      <h3 class="section-title">&#10024; Strengths</h3>
-      <div class="strengths-list">
-        <div class="strength-badge">Problem-Solving</div>
-        <div class="strength-badge">Teamwork</div>
-        <div class="strength-badge">Effective Communication</div>
-        <div class="strength-badge">Fast Learner</div>
-        <div class="strength-badge">Technical Depth</div>
-        <div class="strength-badge">Clean Code</div>
-        <div class="strength-badge">Attention to Detail</div>
-      </div>
-    </section>
-
-    <!-- RESUME -->
     <!-- RESUME -->
     <section class="card" id="resume">
       <h3 class="section-title">&#128196; Resume</h3>
@@ -687,7 +813,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Vikas Vitthalrao Gabale &middot; Java Backend Developer &middot; Built with dedication and passion for backend development.
+    &copy; 2026 Vikas Vitthalrao Gabale &middot; Java Backend Developer
   </footer>
 
   <div class="scroll-top" id="scrollTop">&#8593;</div>
@@ -695,7 +821,7 @@
   <script>
     // Particles
     const pc = document.getElementById('particles');
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 14; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
       p.style.width = Math.random() * 5 + 2 + 'px';
