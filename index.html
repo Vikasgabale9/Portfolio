@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vikas Vitthalrao Gabale - Java Backend Developer Portfolio</title>
-  <meta name="description" content="Java Backend Developer building REST APIs and backend applications with Java, Spring Boot, databases, and microservices. Explore projects, skills, and contact details." />
+  <meta name="description" content="Vikas Vitthalrao Gabale is a Java Backend Developer focused on Java, Spring Boot, REST APIs, Spring Security, databases, and microservices. Explore backend projects and contact details." />
+  <meta name="theme-color" content="#0a0e27" />
+  <meta property="og:title" content="Vikas Vitthalrao Gabale | Java Backend Developer" />
+  <meta property="og:description" content="Java, Spring Boot, REST APIs, security, databases, and backend projects." />
+  <meta property="og:type" content="website" />
   <link rel="icon" href="favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-main: #0a0e27;
@@ -344,14 +348,298 @@
       background:rgba(255,255,255,0.14); border-color:var(--accent-cyan);
       box-shadow:0 8px 25px rgba(34,211,238,0.35); color:var(--accent-cyan);
     }
+
+    /* ===== MODERN UI LAYER: styling-only overrides; original content is preserved ===== */
+    :root {
+      --bg-main: #080d16;
+      --card-bg: rgba(17, 27, 43, .82);
+      --text-main: #edf5f7;
+      --text-light: #a5b4c4;
+      --accent-blue: #5eead4;
+      --accent-pink: #34d399;
+      --accent-purple: #818cf8;
+      --accent-cyan: #22d3ee;
+      --accent-orange: #fbbf24;
+      --border-rad: 24px;
+      --shadow: 0 18px 55px rgba(0,0,0,.28);
+      --surface-border: rgba(148,163,184,.16);
+    }
+    html { scroll-padding-top: 24px; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--bg-main);
+      background-image:
+        radial-gradient(ellipse at 12% 4%, rgba(16,185,129,.12), transparent 38%),
+        radial-gradient(ellipse at 88% 18%, rgba(34,211,238,.09), transparent 34%),
+        linear-gradient(180deg, #080d16 0%, #0b1220 52%, #080d16 100%);
+      letter-spacing: -.012em;
+    }
+    .particles { z-index: 0; opacity: .75; }
+    .particle { background: var(--accent-cyan); box-shadow: 0 0 12px rgba(34,211,238,.35); }
+    header {
+      padding: clamp(3.5rem, 8vw, 6.5rem) 1.25rem 2.5rem;
+      isolation: isolate;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: min(72vw, 760px);
+      aspect-ratio: 1;
+      left: 50%; top: 3%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(16,185,129,.14), rgba(34,211,238,.055) 38%, transparent 70%);
+      filter: blur(10px);
+      pointer-events: none;
+      animation: orbDrift 12s ease-in-out infinite alternate;
+    }
+    @keyframes orbDrift { from { transform: translateX(-53%) translateY(-6px) scale(.96); } to { transform: translateX(-47%) translateY(14px) scale(1.04); } }
+    header h1 {
+      max-width: 1000px; margin: .8rem auto .5rem;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.08; letter-spacing: -.055em;
+      background-image: linear-gradient(110deg, #ecfeff 8%, #5eead4 48%, #a5b4fc 92%);
+      background-size: 180% 180%;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    header h2 { color: #5eead4; font-weight: 700; letter-spacing: .02em; }
+    header .hero-desc { max-width: 760px; font-size: clamp(.98rem, 1.5vw, 1.1rem); line-height: 1.85; }
+    .profile-pic {
+      width: 148px; height: 148px;
+      background: linear-gradient(var(--bg-main),var(--bg-main)) padding-box,
+        linear-gradient(135deg,#34d399,#22d3ee,#818cf8) border-box;
+      box-shadow: 0 0 0 8px rgba(52,211,153,.045), 0 14px 45px rgba(34,211,238,.15);
+    }
+    nav { gap: .6rem; margin-top: 1.1rem; }
+    nav a {
+      background: rgba(17,27,43,.78); border: 1px solid var(--surface-border);
+      box-shadow: none; padding: .62rem 1rem; font-size: .88rem;
+      backdrop-filter: blur(14px);
+    }
+    nav a::before { background: linear-gradient(120deg, rgba(16,185,129,.95), rgba(34,211,238,.95)); }
+    nav a:hover { box-shadow: 0 8px 24px rgba(16,185,129,.17); }
+    .menu-toggle {
+      border: 1px solid var(--surface-border); border-radius: 12px;
+      background: rgba(17,27,43,.9); padding: .35rem .7rem;
+    }
+    .container { max-width: 1180px; gap: 1.5rem; padding: 0 clamp(1rem, 3vw, 2rem); }
+    .card {
+      padding: clamp(1.35rem, 3vw, 2.5rem);
+      background: linear-gradient(145deg, rgba(17,27,43,.91), rgba(12,20,33,.88));
+      border: 1px solid var(--surface-border);
+      box-shadow: 0 18px 50px rgba(0,0,0,.18);
+      backdrop-filter: blur(18px);
+    }
+    .card::before { background: linear-gradient(135deg, rgba(52,211,153,.6), rgba(34,211,238,.4), rgba(129,140,248,.35)); }
+    .card:hover { box-shadow: 0 20px 60px rgba(0,0,0,.28), 0 0 28px rgba(16,185,129,.045); }
+    .section-title {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      letter-spacing: -.04em; line-height: 1.2; margin-bottom: 1.6rem;
+      background-image: linear-gradient(100deg, #5eead4, #a5b4fc);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .section-title::after { width: 54px; height: 3px; background: #34d399; -webkit-text-fill-color: initial; }
+    .skills-section { gap: 1.4rem; }
+    .skills-category {
+      padding: 1.15rem; border-radius: 18px;
+      border: 1px solid rgba(148,163,184,.12);
+      background: rgba(7,14,25,.38);
+      transition: border-color .25s ease, transform .25s ease, background .25s ease;
+    }
+    .skills-category:hover { border-color: rgba(94,234,212,.3); background: rgba(7,14,25,.62); transform: translateY(-2px); }
+    .skills-category h4 { color: #5eead4; font-size: 1.02rem; letter-spacing: -.02em; }
+    .skill-badge {
+      font-size: .85rem; padding: .58em .95em; border-radius: 10px;
+      border-color: rgba(148,163,184,.18); background: rgba(148,163,184,.07);
+      cursor: default; font-family: 'JetBrains Mono', monospace;
+    }
+    .skill-badge::before { background: linear-gradient(135deg, rgba(16,185,129,.22), rgba(34,211,238,.2)); }
+    .skill-badge:hover { border-color: rgba(94,234,212,.48); box-shadow: 0 8px 22px rgba(16,185,129,.09); }
+    .learning-badge { border-radius: 10px; font-size: .85rem; }
+    .learning-section-header h4 { color: #fbbf24; }
+    .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; align-items: stretch; }
+    .project-card, .project-card-featured {
+      min-width: 0; height: 100%; padding: clamp(1.2rem, 2.4vw, 1.8rem);
+      border: 1px solid var(--surface-border); border-left: 3px solid #34d399;
+      border-radius: 20px; background: rgba(8,16,28,.64);
+      box-shadow: 0 10px 28px rgba(0,0,0,.16);
+    }
+    .project-card-featured { grid-column: 1 / -1; border-left: 4px solid #5eead4; background: linear-gradient(125deg, rgba(16,185,129,.08), rgba(17,27,43,.88) 44%, rgba(34,211,238,.04)); }
+    .project-card h4, .project-card-featured h4 { color: #8ff3df; letter-spacing: -.025em; line-height: 1.35; }
+    .project-card .project-tagline { font-style: normal; line-height: 1.75; }
+    .project-bullets li { line-height: 1.7; }
+    .tech-tags { gap: .45rem; }
+    .tech-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem;
+      background: rgba(34,211,238,.07); color: #8debe8;
+      border-color: rgba(34,211,238,.18); border-radius: 8px; padding: .35em .65em;
+    }
+    .project-links a, .resume-btn, .hero-btn {
+      border-radius: 12px; font-weight: 700; transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .project-links a { background: #0f766e; box-shadow: none; }
+    .project-links a:hover { background: #10b981; color: #04130f; box-shadow: 0 8px 22px rgba(16,185,129,.16); }
+    .hero-btn-primary, .resume-btn {
+      background: linear-gradient(115deg, #10b981, #22d3ee);
+      color: #04130f; box-shadow: 0 8px 25px rgba(16,185,129,.18);
+    }
+    .hero-btn-secondary { border-color: rgba(94,234,212,.38); background: rgba(17,27,43,.65); }
+    .hero-btn:hover, .resume-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(16,185,129,.2); }
+    .exp-card, .cert-card, .achievement-highlight {
+      background: rgba(8,16,28,.58);
+      border-color: var(--surface-border); border-radius: 18px;
+    }
+    .exp-title, .timelines li b { color: #8ff3df; }
+    .cert-card { border-color: rgba(34,211,238,.16); }
+    .cert-card:hover { border-color: rgba(94,234,212,.5); background: rgba(16,185,129,.06); }
+    .achievement-highlight { background: linear-gradient(120deg, rgba(16,185,129,.08), rgba(17,27,43,.72)); }
+    .achievement-highlight h4 { color: #fbbf24; }
+    .timelines { position: relative; padding-left: .25rem; }
+    .timelines li {
+      border-left: 2px solid rgba(94,234,212,.35);
+      margin-left: .4rem; padding: 0 0 1.3rem 1.5rem; line-height: 1.8;
+    }
+    .timelines li::before { left: -7px; background: #34d399; box-shadow: 0 0 0 5px rgba(52,211,153,.1), 0 0 16px rgba(52,211,153,.3); }
+    .contact-list li { align-items: flex-start; flex-wrap: wrap; }
+    .contact-list b { color: #5eead4; }
+    #contact > div > div {
+      background: linear-gradient(145deg, #101b2b, #0b1321) !important;
+      border: 1px solid rgba(148,163,184,.2) !important;
+      box-shadow: 0 18px 40px rgba(0,0,0,.22) !important;
+    }
+    #contact h2 { color: #edf5f7 !important; }
+    #contact p { color: #a5b4c4 !important; }
+    #contact label { color: #cbd5e1 !important; }
+    #contact input[type="email"], #contact textarea {
+      background: #080f1b !important; color: #edf5f7 !important;
+      border: 1px solid rgba(148,163,184,.28) !important; border-radius: 12px !important;
+      outline: none; transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    #contact input[type="email"]:focus, #contact textarea:focus {
+      border-color: #5eead4 !important; box-shadow: 0 0 0 4px rgba(94,234,212,.1);
+    }
+    #contact input::placeholder, #contact textarea::placeholder { color: #718096; }
+    #submitBtn { background: linear-gradient(110deg, #10b981, #22d3ee) !important; color: #04130f !important; border-radius: 12px !important; }
+    #submitBtn:hover { filter: brightness(1.06); box-shadow: 0 10px 24px rgba(16,185,129,.18); }
+    footer { color: #8fa2b8; background: rgba(4,9,16,.65); border-top: 1px solid var(--surface-border); border-radius: 0; }
+    .scroll-top { background: linear-gradient(135deg,#10b981,#22d3ee); color: #04130f; border: 1px solid rgba(255,255,255,.16); }
+    .coding-stats-section { overflow: hidden; }
+    .stats-heading { display: flex; align-items: center; gap: 1rem; }
+    .stats-icon {
+      display: grid; place-items: center; flex: 0 0 58px; height: 58px;
+      border: 1px solid rgba(94,234,212,.28); border-radius: 16px;
+      background: rgba(16,185,129,.09); color: #5eead4;
+      font: 600 1.15rem 'JetBrains Mono', monospace;
+    }
+    .eyebrow { color: #5eead4; font: 600 .7rem 'JetBrains Mono', monospace; letter-spacing: .14em; margin-bottom: .4rem; }
+    .stats-heading .section-title { margin-bottom: .7rem; }
+    .stats-description { color: var(--text-light); font-size: .92rem; }
+    .stats-metric {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 1.2rem;
+      padding: 1.4rem; margin-top: 1.5rem; border-radius: 18px;
+      border: 1px solid rgba(94,234,212,.16);
+      background: linear-gradient(110deg, rgba(16,185,129,.09), rgba(34,211,238,.035));
+    }
+    .stats-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; letter-spacing: -.07em; color: #5eead4; }
+    .stats-number span { color: #a5b4fc; }
+    .stats-copy { display: grid; gap: .25rem; }
+    .stats-copy strong { font-size: 1.05rem; }
+    .stats-copy span { color: var(--text-light); font-size: .86rem; }
+    .stats-chip { margin-left: auto; padding: .45rem .75rem; border: 1px solid rgba(94,234,212,.24); color: #8ff3df; border-radius: 999px; font: 500 .72rem 'JetBrains Mono', monospace; }
+    .stats-track { height: 5px; margin-top: .9rem; background: rgba(148,163,184,.12); border-radius: 999px; overflow: hidden; }
+    .stats-track span { display: block; width: 100%; height: 100%; background: linear-gradient(90deg,#10b981,#22d3ee,#818cf8); transform-origin: left; animation: trackReveal 1.1s ease-out both; }
+    @keyframes trackReveal { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #5eead4; outline-offset: 4px; }
+    @media (max-width: 760px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card-featured { grid-column: auto; }
+      header { padding-top: 4.5rem; }
+      nav { align-items: stretch; }
+      nav a { text-align: center; }
+      .stats-chip { margin-left: 0; }
+    }
+
+    /* ===== ARCHITECTURE (redesigned) ===== */
+    .arch-intro { color: var(--text-light); max-width: 820px; margin-bottom: 1.6rem; }
+    .arch-card {
+      border: 1px solid var(--surface-border); border-radius: 20px;
+      background: rgba(8,16,28,.6); padding: clamp(1.2rem, 2.5vw, 1.8rem); margin-bottom: 1.2rem;
+    }
+    .arch-head { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.6rem; margin-bottom:1.3rem; }
+    .arch-head h4 { color:#8ff3df; font-size:1.2rem; letter-spacing:-.02em; margin:0; }
+    .arch-pill { font:600 .7rem 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase; color:#5eead4; border:1px solid rgba(94,234,212,.3); padding:.3rem .7rem; border-radius:999px; }
+    .arch-label { font:600 .68rem 'JetBrains Mono',monospace; letter-spacing:.14em; text-transform:uppercase; color:#818cf8; margin:1.3rem 0 .7rem; }
+    .flow { display:flex; align-items:stretch; gap:0; }
+    .node {
+      flex:1 1 0; min-width:0; text-align:center; padding:1rem .7rem;
+      border:1px solid rgba(94,234,212,.2); border-radius:14px;
+      background:linear-gradient(160deg, rgba(16,185,129,.09), rgba(17,27,43,.8));
+      transition:transform .25s ease, border-color .25s ease;
+    }
+    .node:hover { transform:translateY(-3px); border-color:rgba(94,234,212,.55); }
+    .node .n-ico { font-size:1.5rem; display:block; margin-bottom:.35rem; }
+    .node strong { display:block; font-size:.92rem; color:var(--text-main); line-height:1.3; }
+    .node small { display:block; margin-top:.25rem; font-size:.74rem; color:var(--text-light); line-height:1.4; }
+    .node.n-data { border-color:rgba(251,191,36,.3); background:linear-gradient(160deg, rgba(251,191,36,.08), rgba(17,27,43,.8)); }
+    .node.n-gate { border-color:rgba(129,140,248,.4); background:linear-gradient(160deg, rgba(129,140,248,.12), rgba(17,27,43,.8)); }
+    .arrow { flex:0 0 34px; display:grid; place-items:center; color:#34d399; font-size:1.2rem; }
+    .support-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:.7rem; }
+    .support {
+      display:flex; gap:.6rem; align-items:flex-start; padding:.75rem .9rem; border-radius:12px;
+      border:1px dashed rgba(148,163,184,.28); background:rgba(148,163,184,.05);
+    }
+    .support .s-ico { font-size:1.15rem; line-height:1.3; }
+    .support strong { display:block; font-size:.84rem; color:var(--text-main); }
+    .support span.s-d { display:block; font-size:.74rem; color:var(--text-light); line-height:1.4; }
+    .svc-row { display:grid; grid-template-columns:repeat(3,1fr); gap:.7rem; }
+    .branch { text-align:center; color:#34d399; font-size:1.2rem; margin:.35rem 0; letter-spacing:.3em; }
+    .arch-note { color:var(--text-light); font-size:.85rem; margin-top:1.1rem; line-height:1.7; }
+    .arch-card .project-links { margin-top:.9rem; }
+    @media (max-width: 760px) {
+      .flow { flex-direction:column; }
+      .arrow { flex-basis:auto; height:28px; transform:rotate(90deg); }
+      .svc-row { grid-template-columns:1fr; }
+    }
+
+    /* ===== REVIEW FIXES ===== */
+    @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+      header h1, .section-title { color: #8ff3df !important; -webkit-text-fill-color: currentColor !important; background: none !important; }
+    }
+    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+    .skill-badge, .tech-tag { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .learning-badge::after, .learning-pill { animation: none !important; }
+    .menu-toggle { line-height:1; color:#5eead4; }
+    nav a:focus-visible, .hero-btn:focus-visible { outline:2px solid #5eead4; outline-offset:3px; }
+    .hero-actions { margin-top:1.4rem; }
+    .profile-pic { transition:none; animation:none; }
+    .profile-pic:hover { transform:none; }
+    img { max-width:100%; height:auto; }
+    .stats-chip, .learning-note { font-size:.8rem; }
+    .ai-block { border:1px solid rgba(129,140,248,.3); background:linear-gradient(145deg, rgba(129,140,248,.08), rgba(7,14,25,.5)); }
+    .ai-block h4 { color:#a5b4fc !important; }
+    .planned { font:600 .62rem 'JetBrains Mono',monospace; letter-spacing:.1em; text-transform:uppercase; color:#fbbf24; border:1px dashed rgba(251,191,36,.5); padding:.12rem .5rem; border-radius:999px; white-space:nowrap; }
+    .steps { list-style:none; counter-reset:st; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:.8rem; padding:0; margin:0; }
+    .steps li { counter-increment:st; padding:.9rem 1rem .9rem 3rem; position:relative; border-radius:14px; border:1px solid rgba(148,163,184,.18); background:rgba(148,163,184,.05); font-size:.88rem; color:var(--text-light); line-height:1.55; }
+    .steps li::before { content:counter(st); position:absolute; left:.9rem; top:.85rem; width:1.5rem; height:1.5rem; display:grid; place-items:center; border-radius:8px; background:rgba(129,140,248,.18); color:#a5b4fc; font:600 .75rem 'JetBrains Mono',monospace; }
+    .steps li strong { color:var(--text-main); display:block; margin-bottom:.2rem; font-size:.92rem; }
+    #contact label { display:block; }
+    #formStatus { min-height:1px; }
+    @media (prefers-reduced-motion: reduce) {
+      .particles { display:none; }
+      header::before, .stats-track span { animation: none !important; }
+      .card, .project-card, .project-card-featured, .skill-badge, .hero-btn { transition: none !important; }
+    }
+
   </style>
 </head>
 <body>
   <div class="particles" id="particles" aria-hidden="true"></div>
 
   <header>
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</div>
-    <img src="VikasGabaleProfile.png" class="profile-pic" alt="Profile picture of Vikas Gabale" />
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" onclick="const n=document.querySelector('nav'); const open=n.classList.toggle('active'); this.setAttribute('aria-expanded', String(open));">&#9776;</button>
+    <img src="VikasGabaleProfile.png" class="profile-pic" width="148" height="148" decoding="async" alt="Profile picture of Vikas Gabale" />
     <h1>Vikas Vitthalrao Gabale</h1>
     <h2>&#128187; Java Backend Developer</h2>
     <p class="hero-desc">
@@ -368,6 +656,9 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#backend-summary">Backend Focus</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#roadmap">AI Roadmap</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -383,7 +674,7 @@
         I'm a Java Backend Developer focused on building maintainable backend applications using Java, Spring Boot, REST APIs, and database integration. My core interests include Spring Data JPA, Hibernate, SQL/NoSQL databases, layered architecture, authentication and authorization, and microservices.<br><br>
         I write clean, maintainable code using layered architecture (Controller &rarr; Service &rarr; Repository) and pay close attention to validation and exception handling so APIs behave predictably.<br><br>
         Strong foundation in OOP, Java Collections, multithreading basics, and Java Streams. Actively practicing <span style="color:var(--accent-cyan);font-weight:600;">Data Structures and Algorithms</span> on LeetCode and HackerRank while building real-world backend projects.<br><br>
-        I am pursuing my Master of Computer Applications (MCA) and continue to strengthen my backend engineering skills through project work, DSA practice, and system-design fundamentals. I am currently exploring <span style="color:var(--accent-orange);font-weight:600;">AWS and Apache Kafka</span>.
+        I am pursuing my Master of Computer Applications (MCA) and continue to strengthen my backend engineering skills through project work, DSA practice, and system-design fundamentals. I am currently exploring <span style="color:var(--accent-orange);font-weight:600;">AI fundamentals</span> alongside cloud and distributed-systems concepts.
       </p>
       <div class="what-i-do-grid" style="margin-top:1.5rem;">
         <div class="what-i-do-item">
@@ -483,9 +774,9 @@
             <span class="learning-pill">&#9679; In Progress</span>
           </div>
           <div class="skills-list">
-            <div class="learning-badge">&#9729;&#65039; AWS</div>
+            <div class="learning-badge">&#129302; AI Fundamentals</div>
+            <div class="learning-badge">&#9729;&#65039; AWS Basics</div>
             <div class="learning-badge">&#128240; Apache Kafka</div>
-            <div class="learning-badge">&#9889; React</div>
             <div class="learning-badge">&#127959;&#65039; Microservices Fundamentals</div>
             <div class="learning-badge">&#128221; System Design Fundamentals</div>
           </div>
@@ -494,6 +785,63 @@
           </p>
         </div>
 
+        <!-- AI & LLM LEARNING -->
+        <div class="skills-category ai-block" aria-labelledby="ai-learning-title">
+          <div class="learning-section-header">
+            <h4 id="ai-learning-title">&#129302; AI &amp; LLM Engineering &mdash; Currently Learning</h4>
+            <span class="learning-pill">Learning / Exploring</span>
+          </div>
+          <div class="skills-list">
+            <div class="learning-badge">LLM Fundamentals</div>
+            <div class="learning-badge">Prompt Engineering &amp; Structured Outputs</div>
+            <div class="learning-badge">Embeddings &amp; Semantic Search</div>
+            <div class="learning-badge">Retrieval-Augmented Generation (RAG)</div>
+            <div class="learning-badge">Vector Databases</div>
+            <div class="learning-badge">LangChain &amp; LangGraph</div>
+            <div class="learning-badge">Spring AI for Java Applications</div>
+            <div class="learning-badge">LLM API Integration</div>
+            <div class="learning-badge">AI Application Evaluation &amp; Security</div>
+          </div>
+          <p class="learning-note" style="color:var(--text-light);margin-top:.8rem;font-style:italic;">These topics are being studied and explored. They are not claimed as professional experience or completed projects.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ADDED CODING STATS WIDGET -->
+    <section class="card coding-stats-section" id="coding-stats" aria-label="Coding practice highlight">
+      <div class="stats-heading">
+        <span class="stats-icon" aria-hidden="true">{"</>"}</span>
+        <div>
+          <p class="eyebrow">CONSISTENT PRACTICE</p>
+          <h3 class="section-title">Coding Practice</h3>
+          <p class="stats-description">A snapshot of my problem-solving practice across coding platforms.</p>
+        </div>
+      </div>
+      <div class="stats-metric">
+        <div class="stats-number">150<span>+</span></div>
+        <div class="stats-copy">
+          <strong>DSA Problems Solved</strong>
+          <span>LeetCode &amp; HackerRank</span>
+        </div>
+        <div class="stats-chip">Problem solving</div>
+      </div>
+      <p class="arch-note" style="margin-top:.8rem;">Self-reported total across LeetCode and HackerRank; no live platform statistics are shown.</p>
+    </section>
+
+    <!-- BACKEND SUMMARY -->
+    <section class="card" id="backend-summary">
+      <h3 class="section-title">Backend Engineering Focus</h3>
+      <p style="color:var(--text-light);max-width:900px;">I build Java and Spring Boot backend applications with REST APIs, layered architecture, database integration, validation, authentication, and predictable error handling. My projects focus on practical workflows such as hourly bookings and distributed service communication.</p>
+      <div class="what-i-do-grid" style="margin-top:1.2rem;">
+        <div class="what-i-do-item"><span class="icon">&#128274;</span><div><strong>Secure APIs</strong><p>JWT-based authentication, role-based authorization, and server-side validation.</p></div></div>
+        <div class="what-i-do-item"><span class="icon">&#128451;&#65039;</span><div><strong>Data &amp; Persistence</strong><p>JPA/Hibernate with relational databases and MongoDB where appropriate.</p></div></div>
+        <div class="what-i-do-item"><span class="icon">&#128268;</span><div><strong>Distributed Systems</strong><p>Service discovery, API gateway routing, inter-service communication, and resilience patterns.</p></div></div>
+      </div>
+      <h4 class="arch-label" style="margin-top:1.6rem;">Backend interview strengths (existing skills)</h4>
+      <div class="strengths-list">
+        <span class="strength-badge">Java &amp; OOP</span><span class="strength-badge">Collections, Streams &amp; Exceptions</span><span class="strength-badge">Multithreading Basics</span><span class="strength-badge">Spring Boot &amp; Spring MVC</span><span class="strength-badge">REST APIs</span><span class="strength-badge">Spring Data JPA &amp; Hibernate</span><span class="strength-badge">SQL / NoSQL</span><span class="strength-badge">Spring Security &amp; JWT</span><span class="strength-badge">Microservices &amp; API Gateway</span><span class="strength-badge">Git, Maven, Postman, Swagger</span><span class="strength-badge">JUnit</span>
       </div>
     </section>
 
@@ -510,8 +858,8 @@
             <li>Role-based workflows for Admin, Vendor, and User</li>
             <li>Email OTP verification and vendor KYC workflow</li>
             <li>Ground management, image galleries, search, filtering, and pagination</li>
-            <li>Booking and availability management work in progress; describe only the parts currently implemented</li>
-            <li>Razorpay payment flow with server-side signature verification, where enabled in the deployed version</li>
+            <li>Ground discovery, hourly booking, and booking conflict validation</li>
+            <li>Razorpay payment integration with server-side signature verification</li>
           </ul>
           <p class="project-section-label">Tech Stack</p>
           <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Security</span><span class="tech-tag">JWT</span><span class="tech-tag">Spring Data JPA</span><span class="tech-tag">Hibernate</span><span class="tech-tag">MySQL</span><span class="tech-tag">Thymeleaf</span><span class="tech-tag">Maven</span></div>
@@ -529,7 +877,7 @@
           </ul>
           <p class="project-section-label">Tech Stack</p>
           <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Cloud</span><span class="tech-tag">Eureka</span><span class="tech-tag">OpenFeign</span><span class="tech-tag">Resilience4j</span><span class="tech-tag">MySQL</span><span class="tech-tag">MongoDB</span></div>
-          <div class="project-links"><a href="https://github.com/Vikasgabale9/Hotel-Microservices" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
+          <div class="project-links"><a href="https://github.com/Vikasgabale9/Hotel-Microservices" target="_blank" rel="noopener noreferrer">View on GitHub</a><a href="https://github.com/Vikasgabale9/Hotel-Microservices" target="_blank" rel="noopener noreferrer" class="btn-secondary">API Docs Setup in Repo</a></div>
         </div>
         <div class="project-card">
           <h4>RedPulse — Blood Donation Platform</h4>
@@ -545,13 +893,82 @@
           <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Security</span><span class="tech-tag">JWT</span><span class="tech-tag">REST APIs</span></div>
           <div class="project-links"><a href="https://github.com/Vikasgabale9/redpulse" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
         </div>
-        <div class="project-card">
-          <h4>Quiz App</h4>
-          <p class="project-tagline">A quiz application project. Add the repository URL and verified feature details before publishing this card.</p>
-          <p class="project-section-label">Project Status</p>
-          <ul class="project-bullets"><li>Use the generated QuizApp logo as the project thumbnail if the app has a visual preview.</li><li>Replace this note with the actual quiz flow, scoring, persistence, and technology stack after verifying the source.</li></ul>
-          <div class="status-note">Repository link and implementation details still need verification.</div>
+      </div>
+    </section>
+
+    <!-- PROJECT ARCHITECTURE -->
+    <section class="card" id="architecture">
+      <h3 class="section-title">Project Architecture</h3>
+      <p class="arch-intro">High-level views of the main backend projects. These diagrams describe the intended application structure, not a live infrastructure monitor.</p>
+
+      <div class="arch-card">
+        <div class="arch-head"><h4>HourBook — Request Flow</h4><span class="arch-pill">Layered Monolith</span></div>
+        <div class="arch-label">Request path</div>
+        <div class="flow">
+          <div class="node"><span class="n-ico">&#127760;</span><strong>Browser</strong><small>Thymeleaf UI</small></div>
+          <div class="arrow" aria-hidden="true">&#8594;</div>
+          <div class="node"><span class="n-ico">&#127918;</span><strong>Controllers</strong><small>Spring Boot MVC</small></div>
+          <div class="arrow" aria-hidden="true">&#8594;</div>
+          <div class="node"><span class="n-ico">&#9881;&#65039;</span><strong>Service Layer</strong><small>Business rules &amp; validation</small></div>
+          <div class="arrow" aria-hidden="true">&#8594;</div>
+          <div class="node"><span class="n-ico">&#128230;</span><strong>Spring Data JPA</strong><small>Hibernate ORM</small></div>
+          <div class="arrow" aria-hidden="true">&#8594;</div>
+          <div class="node n-data"><span class="n-ico">&#128451;&#65039;</span><strong>MySQL</strong><small>Relational store</small></div>
         </div>
+        <div class="arch-label">Supporting integrations</div>
+        <div class="support-grid">
+          <div class="support"><span class="s-ico">&#128274;</span><div><strong>JWT Security</strong><span class="s-d">Role-based access</span></div></div>
+          <div class="support"><span class="s-ico">&#9993;&#65039;</span><div><strong>Email OTP</strong><span class="s-d">Account verification</span></div></div>
+          <div class="support"><span class="s-ico">&#128196;</span><div><strong>Vendor KYC</strong><span class="s-d">Approval workflow</span></div></div>
+          <div class="support"><span class="s-ico">&#128179;</span><div><strong>Razorpay</strong><span class="s-d">Server-side signature check</span></div></div>
+        </div>
+        <div class="project-links"><a href="https://github.com/Vikasgabale9/HourBook" target="_blank" rel="noopener noreferrer">View Source</a></div>
+      </div>
+
+      <div class="arch-card">
+        <div class="arch-head"><h4>Hotel Rating Platform — Microservices Flow</h4><span class="arch-pill">Distributed</span></div>
+        <div class="arch-label">Request path</div>
+        <div class="flow">
+          <div class="node"><span class="n-ico">&#128241;</span><strong>Client</strong><small>API consumer</small></div>
+          <div class="arrow" aria-hidden="true">&#8594;</div>
+          <div class="node n-gate"><span class="n-ico">&#128682;</span><strong>Spring Cloud Gateway</strong><small>Routing &amp; entry point</small></div>
+        </div>
+        <div class="branch" aria-hidden="true">&#8595;</div>
+        <div class="svc-row">
+          <div class="node"><span class="n-ico">&#128100;</span><strong>User Service</strong><small>Users</small></div>
+          <div class="node"><span class="n-ico">&#127976;</span><strong>Hotel Service</strong><small>Hotels</small></div>
+          <div class="node"><span class="n-ico">&#11088;</span><strong>Rating Service</strong><small>Ratings</small></div>
+        </div>
+        <div class="arch-label">Platform services</div>
+        <div class="support-grid">
+          <div class="support"><span class="s-ico">&#128225;</span><div><strong>Eureka Registry</strong><span class="s-d">Service discovery</span></div></div>
+          <div class="support"><span class="s-ico">&#128295;</span><div><strong>Config Server</strong><span class="s-d">Centralized configuration</span></div></div>
+          <div class="support"><span class="s-ico">&#128260;</span><div><strong>OpenFeign</strong><span class="s-d">Inter-service calls</span></div></div>
+          <div class="support"><span class="s-ico">&#128737;&#65039;</span><div><strong>Resilience4j</strong><span class="s-d">Circuit breaker / fallback</span></div></div>
+        </div>
+        <p class="arch-note">Each service uses its configured persistence store (MySQL / MongoDB) and communicates through registered service names and inter-service calls.</p>
+        <div class="project-links"><a href="https://github.com/Vikasgabale9/Hotel-Microservices" target="_blank" rel="noopener noreferrer">View Source</a></div>
+      </div>
+    </section>
+
+    <!-- AI BACKEND LEARNING ROADMAP -->
+    <section class="card" id="roadmap">
+      <h3 class="section-title">AI Backend Learning Roadmap</h3>
+      <p class="arch-intro"><span class="planned">Proposed &mdash; not built</span> &nbsp;This is a next project idea, not a completed project. Every component below is planned or still to be learned.</p>
+      <div class="arch-card">
+        <div class="arch-head"><h4>Next Project Idea: Spring Boot RAG Knowledge Assistant</h4><span class="arch-pill">Planned</span></div>
+        <p class="arch-note" style="margin-top:0;margin-bottom:1.1rem;">Primary Java integration option: <strong>Spring AI</strong>. LangChain and LangGraph are concepts to explore where relevant.</p>
+        <ol class="steps">
+          <li><strong>Document upload &amp; validation <span class="planned">Planned</span></strong>REST APIs with file type and size validation.</li>
+          <li><strong>Extraction &amp; chunking <span class="planned">To learn</span></strong>Extract text and split documents into chunks.</li>
+          <li><strong>Embedding generation <span class="planned">To learn</span></strong>Create embeddings through an LLM provider.</li>
+          <li><strong>Vector storage <span class="planned">To learn</span></strong>PostgreSQL with pgvector, or another suitable vector database.</li>
+          <li><strong>Similarity search &amp; retrieval <span class="planned">To learn</span></strong>Retrieve the most relevant chunks for a question.</li>
+          <li><strong>Grounded answers <span class="planned">To learn</span></strong>LLM answers generated from retrieved documents.</li>
+          <li><strong>Source references <span class="planned">Planned</span></strong>Responses cite the documents they used.</li>
+          <li><strong>Production hardening <span class="planned">Planned</span></strong>Spring Security, input validation, exception handling, logging, timeouts, retries, and rate limiting.</li>
+          <li><strong>Tests &amp; local setup <span class="planned">Planned</span></strong>Unit and integration tests, with Docker-based local setup.</li>
+        </ol>
       </div>
     </section>
 
@@ -671,7 +1088,7 @@
     <section class="card" id="education">
       <h3 class="section-title">&#127891; Education</h3>
       <ul class="timelines">
-        <li><b>Master of Computer Applications (MCA) — Pursuing</b><br/>Kurukshetra University &nbsp;&middot;&nbsp; (2025&ndash;2027; verify official dates)</li>
+        <li><b>Master of Computer Applications (MCA) — Pursuing</b><br/>Kurukshetra University &nbsp;&middot;&nbsp; (2025&ndash;2027)</li>
         <li><b>B.Sc. Computer Science</b><br/>SRTMU &nbsp;&middot;&nbsp; (2022&ndash;2025)</li>
         <li><b>Diploma in Computer Hardware &amp; Network Maintenance</b><br/>(2020&ndash;2021)</li>
         <li><b>HSC</b><br/>MGM College of Science &nbsp;&middot;&nbsp; (2018&ndash;2020)</li>
@@ -692,7 +1109,7 @@
       <div>
         <h3 class="section-title">&#128222; Contact Me</h3>
         <ul class="contact-list">
-          <li><b>Email:</b><a href="mailto:vikasgabale9@gmail.com" target="_blank" rel="noopener noreferrer">vikasgabale9@gmail.com</a></li>
+          <li><b>Email:</b><a href="mailto:vikasgabale9@gmail.com">vikasgabale9@gmail.com</a></li>
           <li><b>LinkedIn:</b><a href="https://www.linkedin.com/in/vikas-gabale" target="_blank" rel="noopener noreferrer">linkedin.com/in/vikas-gabale</a></li>
           <li><b>GitHub:</b><a href="https://github.com/Vikasgabale9" target="_blank" rel="noopener noreferrer">github.com/Vikasgabale9</a></li>
           <li><b>Location:</b><span style="color:var(--text-light)">Hyderabad, India</span></li>
@@ -709,19 +1126,19 @@
           </div>
           <form id="contactForm" action="https://formspree.io/f/mqagynon" method="POST">
             <div style="margin-bottom:14px;">
-              <label style="display:block;font-size:13px;color:#334155;margin-bottom:8px;">Your email</label>
-              <input type="email" name="_replyto" placeholder="you@domain.com" required style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.18);font-size:14px;color:#0f172a;box-sizing:border-box;">
+              <label for="cf-email" style="display:block;font-size:13px;color:#334155;margin-bottom:8px;">Your email</label>
+              <input type="email" id="cf-email" name="_replyto" autocomplete="email" placeholder="you@domain.com" required style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.18);font-size:14px;color:#0f172a;box-sizing:border-box;">
             </div>
             <div style="margin-bottom:14px;">
-              <label style="display:block;font-size:13px;color:#334155;margin-bottom:8px;">Your message</label>
-              <textarea name="message" placeholder="Write your message here..." rows="6" required style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.18);font-size:14px;color:#0f172a;resize:vertical;min-height:120px;box-sizing:border-box;"></textarea>
+              <label for="cf-message" style="display:block;font-size:13px;color:#334155;margin-bottom:8px;">Your message</label>
+              <textarea id="cf-message" name="message" placeholder="Write your message here..." rows="6" required style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.18);font-size:14px;color:#0f172a;resize:vertical;min-height:120px;box-sizing:border-box;"></textarea>
             </div>
-            <input type="text" name="_gotcha" style="display:none" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <input type="hidden" name="_subject" value="New contact from portfolio!" />
             <button type="submit" id="submitBtn" style="background:linear-gradient(90deg,#7c3aed,#06b6d4);border:none;color:white;padding:12px 24px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;width:100%;transition:opacity 0.2s;">
               Send Message
             </button>
-            <div id="formStatus" style="margin-top:12px;font-size:13px;text-align:center;display:none;"></div>
+            <div id="formStatus" role="status" aria-live="polite" style="margin-top:12px;font-size:13px;text-align:center;display:none;"></div>
           </form>
           <div style="margin-top:12px;font-size:12px;color:#94a3b8;text-align:center;">Your message will be sent to vikasgabale9@gmail.com</div>
         </div>
@@ -733,12 +1150,12 @@
     &copy; 2026 Vikas Vitthalrao Gabale &middot; Java Backend Developer
   </footer>
 
-  <div class="scroll-top" id="scrollTop">&#8593;</div>
+  <button class="scroll-top" id="scrollTop" type="button" aria-label="Back to top">&#8593;</button>
 
   <script>
     // Particles
     const pc = document.getElementById('particles');
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 8; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
       p.style.width = Math.random() * 5 + 2 + 'px';
@@ -749,19 +1166,21 @@
       p.style.animationDuration = (Math.random() * 10 + 10) + 's';
       pc.appendChild(p);
     }
+    // Close mobile nav after choosing a link
+    document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => {
+      document.querySelector('nav').classList.remove('active');
+      document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');
+    }));
     // Scroll top
     const st = document.getElementById('scrollTop');
     window.addEventListener('scroll', () => st.classList.toggle('visible', window.scrollY > 300));
     st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    // GSAP
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from('header', { opacity: 0, y: -50, duration: 1, ease: 'power3.out' });
-    gsap.utils.toArray('.card').forEach(card => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: 'top 80%', toggleActions: 'play none none reverse' },
-        opacity: 0, y: 50, duration: 0.8, ease: 'power2.out'
+    // Lightweight reveal enhancement; content remains visible without JavaScript.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = '1';
       });
-    });
+    }
     // Contact form
     const form = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
@@ -771,7 +1190,7 @@
       submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; submitBtn.style.opacity = '0.7';
       try {
         const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-        const data = await res.json();
+        const data = await res.json().catch(() => ({}));
         if (res.ok) {
           formStatus.style.display = 'block'; formStatus.style.color = '#10b981';
           formStatus.textContent = "Message sent successfully! I'll get back to you soon.";
