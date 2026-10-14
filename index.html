@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vikas Vitthalrao Gabale - Java Backend Developer Portfolio</title>
-  <meta name="description" content="Java Backend Developer specializing in scalable RESTful APIs using Spring Boot, Hibernate, and MySQL." />
+  <meta name="description" content="Java Backend Developer building REST APIs and backend applications with Java, Spring Boot, databases, and microservices. Explore projects, skills, and contact details." />
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -39,7 +39,7 @@
       scroll-behavior: smooth;
     }
     .particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
-    .particle { position:absolute; background:var(--accent-blue); border-radius:50%; opacity:0.3; animation:float 15s infinite ease-in-out; }
+    .particle { position:absolute; background:var(--accent-blue); border-radius:50%; opacity:0.12; animation:float 15s infinite ease-in-out; }
     @keyframes float {
       0%,100% { transform:translateY(0) translateX(0); }
       25% { transform:translateY(-100px) translateX(50px); }
@@ -310,6 +310,7 @@
       .cert-grid { grid-template-columns:1fr; }
       .exp-header { flex-direction:column; }
     }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
     /* RESUME */
     .resume-btn {
       display:inline-flex; align-items:center; gap:0.5rem;
@@ -346,16 +347,16 @@
   </style>
 </head>
 <body>
-  <div class="particles" id="particles"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
 
   <header>
     <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</div>
-    <img src="VikasGabaleProfile.jpg" class="profile-pic" alt="Profile picture of Vikas Gabale" />
+    <img src="VikasGabaleProfile.png" class="profile-pic" alt="Profile picture of Vikas Gabale" />
     <h1>Vikas Vitthalrao Gabale</h1>
     <h2>&#128187; Java Backend Developer</h2>
     <p class="hero-desc">
-      Java Backend Developer focused on building backend applications using Java, Spring Boot, Spring Data JPA, Hibernate, MySQL, and Redis.<br>
-      Interested in REST API development, database integration, authentication workflows, validation, exception handling, and practical backend problem-solving.
+      Java Backend Developer focused on building maintainable backend applications and REST APIs with Java, Spring Boot, Spring Data JPA, Hibernate, and SQL/NoSQL databases.<br>
+      Interested in secure API design, microservices, database integration, validation, exception handling, and practical backend problem-solving.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="hero-btn hero-btn-primary">View Projects</a>
@@ -379,10 +380,10 @@
     <section class="card" id="about">
       <h3 class="section-title">&#128075; About Me</h3>
       <p>
-        I'm a Java Backend Developer focused on building backend applications using Java, Spring Boot, REST APIs, and database integration. My core work centers around Spring Data JPA, Hibernate, MySQL, backend application architecture, authentication and authorization concepts, and caching using Redis.<br><br>
+        I'm a Java Backend Developer focused on building maintainable backend applications using Java, Spring Boot, REST APIs, and database integration. My core interests include Spring Data JPA, Hibernate, SQL/NoSQL databases, layered architecture, authentication and authorization, and microservices.<br><br>
         I write clean, maintainable code using layered architecture (Controller &rarr; Service &rarr; Repository) and pay close attention to validation and exception handling so APIs behave predictably.<br><br>
         Strong foundation in OOP, Java Collections, multithreading basics, and Java Streams. Actively practicing <span style="color:var(--accent-cyan);font-weight:600;">Data Structures and Algorithms</span> on LeetCode and HackerRank while building real-world backend projects.<br><br>
-        I continuously work on expanding my backend knowledge and am currently exploring <span style="color:var(--accent-orange);font-weight:600;">AWS, Apache Kafka, and React</span>.
+        I am pursuing my Master of Computer Applications (MCA) and continue to strengthen my backend engineering skills through project work, DSA practice, and system-design fundamentals. I am currently exploring <span style="color:var(--accent-orange);font-weight:600;">AWS and Apache Kafka</span>.
       </p>
       <div class="what-i-do-grid" style="margin-top:1.5rem;">
         <div class="what-i-do-item">
@@ -417,6 +418,8 @@
             <div class="skill-badge">Spring Data JPA</div>
             <div class="skill-badge">Hibernate</div>
             <div class="skill-badge">REST APIs</div>
+            <div class="skill-badge">Microservices</div>
+            <div class="skill-badge">Spring Cloud</div>
           </div>
         </div>
         <div class="skills-category">
@@ -498,151 +501,63 @@
     <section class="card" id="projects">
       <h3 class="section-title">&#128640; Projects</h3>
       <div class="projects-grid">
-
-        <!-- FEATURED: HOURBOOK -->
         <div class="project-card-featured">
-          <span class="featured-badge">&#11088; Featured Project</span>
-          <h4>&#127967;&#65039; HourBook &mdash; Sports Ground Booking Platform</h4>
-          <p class="project-tagline">An hourly sports ground management platform supporting Admin, Vendor, and User workflows.</p>
-          <div class="role-tags">
-            <span class="role-tag">Admin</span>
-            <span class="role-tag">Vendor</span>
-            <span class="role-tag">User</span>
-          </div>
-          <p class="project-section-label">&#11088; Key Features</p>
+          <span class="featured-badge">Featured Project</span>
+          <h4>HourBook — Sports Ground Booking Platform</h4>
+          <p class="project-tagline">A web platform for hourly sports-ground discovery and booking with Admin, Vendor, and User workflows.</p>
+          <p class="project-section-label">Key Features</p>
           <ul class="project-bullets">
-            <li>Multi-role architecture with Admin, Vendor, and User modules</li>
-            <li>Registration workflows with email OTP verification</li>
-            <li>Vendor KYC approval workflow with document handling</li>
-            <li>Ground management: add/edit/activate grounds, amenities, pricing, and multiple image uploads</li>
-            <li>Admin dashboard for managing users, vendors, and platform data</li>
-            <li>Search, filtering, and pagination for ground listings</li>
+            <li>Role-based workflows for Admin, Vendor, and User</li>
+            <li>Email OTP verification and vendor KYC workflow</li>
+            <li>Ground management, image galleries, search, filtering, and pagination</li>
+            <li>Booking and availability management work in progress; describe only the parts currently implemented</li>
+            <li>Razorpay payment flow with server-side signature verification, where enabled in the deployed version</li>
           </ul>
-          <p class="project-section-label">&#129504; Key Backend Concepts</p>
-          <ul class="project-bullets">
-            <li>DTO-based layered architecture (Controller &#8594; Service &#8594; Repository)</li>
-            <li>Entity relationships and persistence using Spring Data JPA &amp; Hibernate</li>
-            <li>Validation and centralized exception handling</li>
-            <li>Implemented JWT token generation, validation, and role-based API protection as part of the application's authentication flow</li>
-          </ul>
-          <p class="project-section-label">&#128295; Tech Stack</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Java 21</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">Spring Security</span>
-            <span class="tech-tag">JWT</span>
-            <span class="tech-tag">Spring Data JPA</span>
-            <span class="tech-tag">Hibernate</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Thymeleaf</span>
-            <span class="tech-tag">Maven</span>
-            <span class="tech-tag">Lombok</span>
-            <span class="tech-tag">Bean Validation</span>
-          </div>
-          <div class="status-note">&#128679; Currently extending the platform with booking and availability management.</div>
-          <div class="project-links">
-            <a href="https://github.com/Vikasgabale9/HourBook" target="_blank" rel="noopener noreferrer">&#128279; View Source Code</a>
-          </div>
+          <p class="project-section-label">Tech Stack</p>
+          <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Security</span><span class="tech-tag">JWT</span><span class="tech-tag">Spring Data JPA</span><span class="tech-tag">Hibernate</span><span class="tech-tag">MySQL</span><span class="tech-tag">Thymeleaf</span><span class="tech-tag">Maven</span></div>
+          <div class="project-links"><a href="https://hourbook.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo</a><a href="https://github.com/Vikasgabale9/HourBook" target="_blank" rel="noopener noreferrer">Source Code</a></div>
         </div>
-
-        <!-- SMART LOST & FOUND -->
         <div class="project-card">
-          <h4>&#128269; Smart Lost &amp; Found Management System</h4>
-          <p class="project-tagline">A Spring Boot REST API for reporting, tracking, and managing lost and found items.</p>
-          <p class="project-section-label">&#11088; Key Features</p>
+          <h4>Hotel Rating Platform — Microservices</h4>
+          <p class="project-tagline">A distributed backend project with separate User, Hotel, and Rating services.</p>
+          <p class="project-section-label">Key Features</p>
           <ul class="project-bullets">
-            <li>REST API development for lost item reporting and found item management</li>
-            <li>CRUD operations with DTO-based API design</li>
-            <li>Search by location and sorting for latest items</li>
-            <li>Request validation and global exception handling</li>
-            <li>Swagger / OpenAPI documentation</li>
+            <li>Service discovery with Eureka and centralized configuration</li>
+            <li>Spring Cloud Gateway and OpenFeign for service communication</li>
+            <li>JWT issuer/audience validation and service-level API integration</li>
+            <li>Resilience4j circuit-breaker/fallback patterns where configured</li>
           </ul>
-          <p class="project-section-label">&#128295; Tech Stack</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">Spring Data JPA</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">REST API</span>
-            <span class="tech-tag">Swagger</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Vikasgabale9/lostfound-tracker" target="_blank" rel="noopener noreferrer">&#128279; View Code on GitHub</a>
-          </div>
+          <p class="project-section-label">Tech Stack</p>
+          <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Cloud</span><span class="tech-tag">Eureka</span><span class="tech-tag">OpenFeign</span><span class="tech-tag">Resilience4j</span><span class="tech-tag">MySQL</span><span class="tech-tag">MongoDB</span></div>
+          <div class="project-links"><a href="https://github.com/Vikasgabale9/Hotel-Microservices" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
         </div>
-
-        <!-- STUDENT MANAGEMENT SYSTEM WITH OTP SECURITY -->
         <div class="project-card">
-          <h4>&#127891; Student Management System with OTP Security</h4>
-          <p class="project-tagline">A Spring Boot backend for student management with email OTP-based account verification.</p>
-          <p class="project-section-label">&#11088; Key Features</p>
+          <h4>RedPulse — Blood Donation Platform</h4>
+          <p class="project-tagline">Backend APIs supporting donor profiles and blood-request workflows.</p>
+          <p class="project-section-label">Key Features</p>
           <ul class="project-bullets">
-            <li>Student registration with email OTP verification (JavaMailSender)</li>
-            <li>Login secured with Spring Security using HTTP Basic Authentication</li>
-            <li>Password encryption using BCrypt</li>
-            <li>OTP verification with expiry handling, cleaned up via a scheduled job</li>
-            <li>CRUD operations on student data with filtering by course and status</li>
+            <li>REST APIs for donors and blood requests</li>
+            <li>JWT authentication, BCrypt password hashing, and role-based access</li>
+            <li>Location-based donor matching using the Haversine formula</li>
+            <li>Email notifications and scheduled processing where implemented</li>
           </ul>
-          <p class="project-section-label">&#128295; Tech Stack</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">Spring Security</span>
-            <span class="tech-tag">Spring Data JPA</span>
-            <span class="tech-tag">MySQL</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Vikasgabale9/Student-Management-System-with-OTP-Security" target="_blank" rel="noopener noreferrer">&#128279; View Code on GitHub</a>
-          </div>
+          <p class="project-section-label">Tech Stack</p>
+          <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Security</span><span class="tech-tag">JWT</span><span class="tech-tag">REST APIs</span></div>
+          <div class="project-links"><a href="https://github.com/Vikasgabale9/redpulse" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
         </div>
-
-        <!-- REDIS CACHE WITH MYSQL -->
         <div class="project-card">
-          <h4>&#9889; Redis Cache with MySQL</h4>
-          <p class="project-tagline">A Spring Boot project exploring Redis caching alongside MySQL to reduce repeated database access.</p>
-          <p class="project-section-label">&#11088; Key Features</p>
-          <ul class="project-bullets">
-            <li>Integrated Redis with Spring Boot using Spring Cache abstraction and RedisTemplate</li>
-            <li>Applied <code>@Cacheable</code>, <code>@CachePut</code>, and <code>@CacheEvict</code> for cache management</li>
-            <li>MySQL remains the primary persistent data store</li>
-            <li>Explored caching strategies to reduce repeated database queries for frequently accessed data</li>
-          </ul>
-          <p class="project-section-label">&#128295; Tech Stack</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">Redis</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Spring Cache</span>
-          </div>
-          <div class="project-links">
-            <p style="color:var(--text-light);font-size:0.85rem;font-style:italic;margin:0;">Source code repository not yet published &mdash; link will be added once available.</p>
-          </div>
+          <h4>Quiz App</h4>
+          <p class="project-tagline">A quiz application project. Add the repository URL and verified feature details before publishing this card.</p>
+          <p class="project-section-label">Project Status</p>
+          <ul class="project-bullets"><li>Use the generated QuizApp logo as the project thumbnail if the app has a visual preview.</li><li>Replace this note with the actual quiz flow, scoring, persistence, and technology stack after verifying the source.</li></ul>
+          <div class="status-note">Repository link and implementation details still need verification.</div>
         </div>
-
       </div>
     </section>
 
     <!-- PROFESSIONAL EXPERIENCE -->
     <section class="card" id="experience">
       <h3 class="section-title">&#128293; Professional Experience</h3>
-
-      <div class="exp-card">
-        <div class="exp-header">
-          <div>
-            <div class="exp-title">Java Developer Intern</div>
-            <div class="exp-company">Analogue Software Solutions</div>
-          </div>
-          <div class="exp-date">Jun 2026 &ndash; Aug 2026</div>
-        </div>
-        <ul class="exp-bullets">
-          <li>Contributed to backend development and technical tasks involving Java, Spring Boot, databases, and project-specific workflows</li>
-          <li>Worked with existing project modules to understand and extend backend logic</li>
-          <li>Assisted with API-related and database-related tasks as part of the team</li>
-          <li>Tested API functionality and error scenarios using Postman</li>
-          <li>Collaborated with team members on assigned project tasks</li>
-        </ul>
-      </div>
 
       <div class="exp-card" style="background:rgba(255,255,255,0.03);border-style:dashed;">
         <div class="exp-header">
@@ -756,6 +671,7 @@
     <section class="card" id="education">
       <h3 class="section-title">&#127891; Education</h3>
       <ul class="timelines">
+        <li><b>Master of Computer Applications (MCA) — Pursuing</b><br/>Kurukshetra University &nbsp;&middot;&nbsp; (2025&ndash;2027; verify official dates)</li>
         <li><b>B.Sc. Computer Science</b><br/>SRTMU &nbsp;&middot;&nbsp; (2022&ndash;2025)</li>
         <li><b>Diploma in Computer Hardware &amp; Network Maintenance</b><br/>(2020&ndash;2021)</li>
         <li><b>HSC</b><br/>MGM College of Science &nbsp;&middot;&nbsp; (2018&ndash;2020)</li>
